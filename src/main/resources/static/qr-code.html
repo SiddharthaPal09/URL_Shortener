@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Code - LinkShort</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="shorten.html" data-auth="user" data-page="shorten.html">Shorten</a>
+    <a href="dashboard.html" data-auth="user" data-page="dashboard.html">Dashboard</a>
+    <a href="my-urls.html" data-auth="user" data-page="my-urls.html">My URLs</a>
+    <a href="analytics.html" data-auth="user" data-page="analytics.html">Analytics</a>
+    <a href="qr-code.html" data-auth="user" data-page="qr-code.html">QR Code</a>
+    <a href="profile.html" data-auth="user" data-page="profile.html">Profile</a>
+    <a href="login.html" data-auth="guest">Sign In</a>
+    <a href="register.html" data-auth="guest" class="btn btn-sm">Register</a>
+    <a href="#" data-auth="user" data-action="logout" class="btn btn-sm btn-outline">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">QR Code</h1>
+  <p class="page-subtitle">Pick one of your short URLs and generate a scannable QR code.</p>
+
+  <div id="qr-alert" class="alert"></div>
+
+  <div class="card">
+    <div class="row">
+      <div class="grow">
+        <label for="url-select">Short URL</label>
+        <select id="url-select">
+          <option value="">Loading...</option>
+        </select>
+      </div>
+      <button type="button" id="generate-btn" class="btn">Generate</button>
+    </div>
+
+    <div class="qr-preview">
+      <img id="qr-image" alt="QR code preview">
+      <div id="qr-empty" class="empty-state">Select a short URL and press Generate to see the QR code.</div>
+      <a id="download-btn" class="btn btn-blue hidden" href="#" download="linkshort-qr.png">Download QR Code</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/qr-code.js"></script>
+</body>
+</html>

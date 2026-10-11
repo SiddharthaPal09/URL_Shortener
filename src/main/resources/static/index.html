@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkShort - URL Shortener</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="shorten.html" data-auth="user" data-page="shorten.html">Shorten</a>
+    <a href="dashboard.html" data-auth="user" data-page="dashboard.html">Dashboard</a>
+    <a href="my-urls.html" data-auth="user" data-page="my-urls.html">My URLs</a>
+    <a href="analytics.html" data-auth="user" data-page="analytics.html">Analytics</a>
+    <a href="qr-code.html" data-auth="user" data-page="qr-code.html">QR Code</a>
+    <a href="profile.html" data-auth="user" data-page="profile.html">Profile</a>
+    <a href="login.html" data-auth="guest">Sign In</a>
+    <a href="register.html" data-auth="guest" class="btn btn-sm">Register</a>
+    <a href="#" data-auth="user" data-action="logout" class="btn btn-sm btn-outline">Logout</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>URL Shortener</h1>
+  <p>Turn long, hard to share links into short LinkShort URLs. Protect them with a password, add an expiry date and get a QR code in seconds.</p>
+
+  <form id="home-form" class="shorten-row">
+    <input type="url" id="long-url" placeholder="https://example.com/very/long/link" required>
+    <button type="submit" class="btn">Shorten Now</button>
+  </form>
+
+  <div class="feature-grid">
+    <a class="feature-card" href="shorten.html?feature=custom">
+      <span class="icon blue">#</span>
+      Custom Link
+    </a>
+    <a class="feature-card" href="shorten.html?feature=password">
+      <span class="icon red">&#128274;</span>
+      Password Protection
+    </a>
+    <a class="feature-card" href="shorten.html?feature=expiry">
+      <span class="icon orange">&#128336;</span>
+      Set Expiration
+    </a>
+    <a class="feature-card" href="shorten.html?feature=qr">
+      <span class="icon purple">&#9638;</span>
+      Generate QR Code
+    </a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="stat-grid">
+    <div class="stat-card">
+      <p class="stat-label">Shorten links</p>
+      <p class="stat-value">1 click</p>
+      <div class="bar"></div>
+    </div>
+    <div class="stat-card blue">
+      <p class="stat-label">Custom links</p>
+      <p class="stat-value">Your alias</p>
+      <div class="bar"></div>
+    </div>
+    <div class="stat-card orange">
+      <p class="stat-label">Expiring links</p>
+      <p class="stat-value">On time</p>
+      <div class="bar"></div>
+    </div>
+    <div class="stat-card purple">
+      <p class="stat-label">QR codes</p>
+      <p class="stat-value">Ready</p>
+      <div class="bar"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

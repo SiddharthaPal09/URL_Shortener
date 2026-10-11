@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register - LinkShort</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="shorten.html" data-auth="user" data-page="shorten.html">Shorten</a>
+    <a href="dashboard.html" data-auth="user" data-page="dashboard.html">Dashboard</a>
+    <a href="my-urls.html" data-auth="user" data-page="my-urls.html">My URLs</a>
+    <a href="analytics.html" data-auth="user" data-page="analytics.html">Analytics</a>
+    <a href="qr-code.html" data-auth="user" data-page="qr-code.html">QR Code</a>
+    <a href="profile.html" data-auth="user" data-page="profile.html">Profile</a>
+    <a href="login.html" data-auth="guest">Sign In</a>
+    <a href="register.html" data-auth="guest" class="btn btn-sm">Register</a>
+    <a href="#" data-auth="user" data-action="logout" class="btn btn-sm btn-outline">Logout</a>
+  </div>
+</nav>
+
+<div class="card auth-card">
+  <h1>Register</h1>
+
+  <div id="register-alert" class="alert"></div>
+
+  <form id="register-form">
+    <div class="field">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" required autocomplete="email">
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input type="password" id="password" required minlength="6" autocomplete="new-password">
+    </div>
+
+    <div class="field">
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" required minlength="6" autocomplete="new-password">
+    </div>
+
+    <button type="submit" class="btn btn-block">Register</button>
+  </form>
+
+  <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

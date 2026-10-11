@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile - LinkShort</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="shorten.html" data-auth="user" data-page="shorten.html">Shorten</a>
+    <a href="dashboard.html" data-auth="user" data-page="dashboard.html">Dashboard</a>
+    <a href="my-urls.html" data-auth="user" data-page="my-urls.html">My URLs</a>
+    <a href="analytics.html" data-auth="user" data-page="analytics.html">Analytics</a>
+    <a href="qr-code.html" data-auth="user" data-page="qr-code.html">QR Code</a>
+    <a href="profile.html" data-auth="user" data-page="profile.html">Profile</a>
+    <a href="login.html" data-auth="guest">Sign In</a>
+    <a href="register.html" data-auth="guest" class="btn btn-sm">Register</a>
+    <a href="#" data-auth="user" data-action="logout" class="btn btn-sm btn-outline">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">Profile</h1>
+  <p class="page-subtitle">Update your name, email and password.</p>
+
+  <div class="card auth-card" style="margin: 0 auto; max-width: 440px;">
+    <div id="profile-alert" class="alert"></div>
+
+    <form id="profile-form">
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required maxlength="100" autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="new-password">New Password</label>
+        <input type="password" id="new-password" minlength="6" autocomplete="new-password" placeholder="Leave empty to keep your current password">
+      </div>
+
+      <div class="field">
+        <label for="confirm-password">Confirm New Password</label>
+        <input type="password" id="confirm-password" minlength="6" autocomplete="new-password">
+      </div>
+
+      <button type="submit" class="btn btn-block">Update Profile</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

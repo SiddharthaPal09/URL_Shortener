@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My URLs - LinkShort</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="shorten.html" data-auth="user" data-page="shorten.html">Shorten</a>
+    <a href="dashboard.html" data-auth="user" data-page="dashboard.html">Dashboard</a>
+    <a href="my-urls.html" data-auth="user" data-page="my-urls.html">My URLs</a>
+    <a href="analytics.html" data-auth="user" data-page="analytics.html">Analytics</a>
+    <a href="qr-code.html" data-auth="user" data-page="qr-code.html">QR Code</a>
+    <a href="profile.html" data-auth="user" data-page="profile.html">Profile</a>
+    <a href="login.html" data-auth="guest">Sign In</a>
+    <a href="register.html" data-auth="guest" class="btn btn-sm">Register</a>
+    <a href="#" data-auth="user" data-action="logout" class="btn btn-sm btn-outline">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row" style="justify-content: space-between; margin-bottom: 4px;">
+    <h1 class="page-title" style="margin: 0;">My URLs</h1>
+    <a href="shorten.html" class="btn btn-sm">+ New URL</a>
+  </div>
+  <p class="page-subtitle">All short URLs you created, with clicks, expiry and quick actions.</p>
+
+  <div id="urls-alert" class="alert"></div>
+  <div id="urls-table" class="table-wrap">
+    <p class="muted">Loading...</p>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="edit-modal">
+  <div class="modal">
+    <h3>Edit short URL</h3>
+    <div id="edit-alert" class="alert"></div>
+    <form id="edit-form">
+      <input type="hidden" id="edit-id">
+      <div class="field">
+        <label for="edit-original-url">Original URL</label>
+        <input type="url" id="edit-original-url" required>
+      </div>
+      <div class="field">
+        <label for="edit-title">Title</label>
+        <input type="text" id="edit-title" maxlength="100">
+      </div>
+      <div class="field">
+        <label for="edit-description">Description</label>
+        <input type="text" id="edit-description" maxlength="500">
+      </div>
+      <div class="field">
+        <label for="edit-expiry">Expiry Date</label>
+        <input type="datetime-local" id="edit-expiry">
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" id="edit-cancel">Cancel</button>
+        <button type="submit" class="btn">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/my-urls.js"></script>
+</body>
+</html>

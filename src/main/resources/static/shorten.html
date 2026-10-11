@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shorten URL - LinkShort</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="shorten.html" data-auth="user" data-page="shorten.html">Shorten</a>
+    <a href="dashboard.html" data-auth="user" data-page="dashboard.html">Dashboard</a>
+    <a href="my-urls.html" data-auth="user" data-page="my-urls.html">My URLs</a>
+    <a href="analytics.html" data-auth="user" data-page="analytics.html">Analytics</a>
+    <a href="qr-code.html" data-auth="user" data-page="qr-code.html">QR Code</a>
+    <a href="profile.html" data-auth="user" data-page="profile.html">Profile</a>
+    <a href="login.html" data-auth="guest">Sign In</a>
+    <a href="register.html" data-auth="guest" class="btn btn-sm">Register</a>
+    <a href="#" data-auth="user" data-action="logout" class="btn btn-sm btn-outline">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">Shorten URL</h1>
+  <p class="page-subtitle">Paste a long URL, pick the options you need and get your short link.</p>
+
+  <div class="card">
+    <div id="shorten-alert" class="alert"></div>
+
+    <form id="shorten-form">
+      <div class="shorten-row" style="margin: 0; max-width: none;">
+        <input type="url" id="original-url" placeholder="https://example.com/very/long/link" required>
+        <button type="submit" class="btn">Shorten Now</button>
+      </div>
+
+      <div class="feature-grid" style="margin-left: 0; margin-right: 0; max-width: none;">
+        <button type="button" class="feature-card" data-feature="custom">
+          <span class="icon blue">#</span>
+          Custom Link
+        </button>
+        <button type="button" class="feature-card" data-feature="password">
+          <span class="icon red">&#128274;</span>
+          Password Protection
+        </button>
+        <button type="button" class="feature-card" data-feature="expiry">
+          <span class="icon orange">&#128336;</span>
+          Set Expiration
+        </button>
+        <button type="button" class="feature-card" data-feature="qr">
+          <span class="icon purple">&#9638;</span>
+          Generate QR Code
+        </button>
+      </div>
+
+      <div id="custom-field" class="field mt hidden">
+        <label for="custom-alias">Custom Link</label>
+        <input type="text" id="custom-alias" placeholder="my-link" maxlength="30">
+        <p class="muted">3 to 30 characters, letters, numbers, "-" and "_" only.</p>
+      </div>
+
+      <div id="password-field" class="field mt hidden">
+        <label for="url-password">Password</label>
+        <input type="text" id="url-password" placeholder="Password to open the short URL" maxlength="100">
+        <p class="muted">Visitors must add ?password=your_password to open the link.</p>
+      </div>
+
+      <div id="expiry-field" class="field mt hidden">
+        <label for="expiry-date">Expiration Date</label>
+        <input type="datetime-local" id="expiry-date">
+      </div>
+    </form>
+
+    <div id="result-box" class="result-box">
+      <p class="muted" style="margin: 0 0 6px;">Your short URL is ready</p>
+      <p class="short-link">
+        <a id="result-link" href="#" target="_blank" rel="noopener"></a>
+      </p>
+      <div class="row mt">
+        <button type="button" id="copy-btn" class="btn btn-sm">Copy Link</button>
+        <a id="result-qr-link" class="btn btn-sm btn-blue hidden" href="qr-code.html">View QR Code</a>
+        <a id="result-analytics-link" class="btn btn-sm btn-outline hidden" href="#">View Analytics</a>
+        <a href="my-urls.html" class="btn btn-sm btn-outline">My URLs</a>
+      </div>
+      <img id="result-qr" class="qr-preview" alt="QR code" style="display: none; margin-top: 14px; max-width: 200px;">
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/shorten.js"></script>
+</body>
+</html>

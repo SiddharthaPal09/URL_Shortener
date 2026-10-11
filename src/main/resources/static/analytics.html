@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analytics - LinkShort</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="shorten.html" data-auth="user" data-page="shorten.html">Shorten</a>
+    <a href="dashboard.html" data-auth="user" data-page="dashboard.html">Dashboard</a>
+    <a href="my-urls.html" data-auth="user" data-page="my-urls.html">My URLs</a>
+    <a href="analytics.html" data-auth="user" data-page="analytics.html">Analytics</a>
+    <a href="qr-code.html" data-auth="user" data-page="qr-code.html">QR Code</a>
+    <a href="profile.html" data-auth="user" data-page="profile.html">Profile</a>
+    <a href="login.html" data-auth="guest">Sign In</a>
+    <a href="register.html" data-auth="guest" class="btn btn-sm">Register</a>
+    <a href="#" data-auth="user" data-action="logout" class="btn btn-sm btn-outline">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">Analytics</h1>
+  <p class="page-subtitle">Click statistics for one of your short URLs.</p>
+
+  <div id="analytics-alert" class="alert"></div>
+
+  <div class="card">
+    <div class="field">
+      <label for="url-select">Short URL</label>
+      <select id="url-select">
+        <option value="">Loading...</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="analytics-content" class="hidden">
+    <div class="stat-grid mt">
+      <div class="stat-card blue">
+        <p class="stat-label">Total Clicks</p>
+        <p class="stat-value" id="total-clicks">0</p>
+        <div class="bar"></div>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">Short URL</p>
+        <p class="stat-value" style="font-size: 14px;" id="analytics-short-url">-</p>
+        <div class="bar"></div>
+      </div>
+      <div class="stat-card purple">
+        <p class="stat-label">Created</p>
+        <p class="stat-value" style="font-size: 14px;" id="analytics-created">-</p>
+        <div class="bar"></div>
+      </div>
+      <div class="stat-card orange">
+        <p class="stat-label">Expiry</p>
+        <p class="stat-value" style="font-size: 14px;" id="analytics-expiry">-</p>
+        <div class="bar"></div>
+      </div>
+    </div>
+
+    <h2 class="section-title mt">Clicks Over Time</h2>
+    <div id="click-chart" class="chart"></div>
+
+    <h2 class="section-title mt">Browser Breakdown</h2>
+    <div id="browser-table" class="table-wrap"></div>
+
+    <h2 class="section-title mt">Devices &amp; Operating Systems</h2>
+    <div class="table-wrap" id="devices-table"></div>
+  </div>
+
+  <div id="analytics-empty" class="empty-state mt hidden">
+    <p style="margin: 0 0 8px;">No short URL selected.</p>
+    <p style="margin: 0;"><a href="shorten.html">Shorten a URL</a> to start collecting click analytics.</p>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/analytics.js"></script>
+</body>
+</html>

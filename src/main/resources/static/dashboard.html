@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - LinkShort</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" data-page="index.html">Home</a>
+    <a href="shorten.html" data-auth="user" data-page="shorten.html">Shorten</a>
+    <a href="dashboard.html" data-auth="user" data-page="dashboard.html">Dashboard</a>
+    <a href="my-urls.html" data-auth="user" data-page="my-urls.html">My URLs</a>
+    <a href="analytics.html" data-auth="user" data-page="analytics.html">Analytics</a>
+    <a href="qr-code.html" data-auth="user" data-page="qr-code.html">QR Code</a>
+    <a href="profile.html" data-auth="user" data-page="profile.html">Profile</a>
+    <a href="login.html" data-auth="guest">Sign In</a>
+    <a href="register.html" data-auth="guest" class="btn btn-sm">Register</a>
+    <a href="#" data-auth="user" data-action="logout" class="btn btn-sm btn-outline">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">Dashboard</h1>
+  <p class="page-subtitle">A quick look at your short URLs and clicks.</p>
+
+  <div id="dashboard-alert" class="alert"></div>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <p class="stat-label">Total URLs</p>
+      <p class="stat-value" id="stat-total-urls">-</p>
+      <div class="bar"></div>
+    </div>
+    <div class="stat-card blue">
+      <p class="stat-label">Total Clicks</p>
+      <p class="stat-value" id="stat-total-clicks">-</p>
+      <div class="bar"></div>
+    </div>
+    <div class="stat-card purple">
+      <p class="stat-label">Active URLs</p>
+      <p class="stat-value" id="stat-active-urls">-</p>
+      <div class="bar"></div>
+    </div>
+    <div class="stat-card red">
+      <p class="stat-label">Expired URLs</p>
+      <p class="stat-value" id="stat-expired-urls">-</p>
+      <div class="bar"></div>
+    </div>
+  </div>
+
+  <div class="row" style="justify-content: space-between; margin-bottom: 12px;">
+    <h2 class="section-title" style="margin: 0;">Recent URLs</h2>
+    <a href="shorten.html" class="btn btn-sm">+ New URL</a>
+  </div>
+
+  <div id="recent-urls" class="table-wrap">
+    <p class="muted">Loading...</p>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
